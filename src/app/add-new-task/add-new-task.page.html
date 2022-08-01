@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Task</ion-title>
+    <ion-icon
+      name="close"
+      slot="end"
+      size="large"
+      color="danger"
+      class="ion-padding"
+      (click)="dismis()"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-textarea placeholder="Write yout task here"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Priority </ion-label>
+      <ion-select>
+        <ion-select-option value="Low">Low</ion-select-option>
+        <ion-select-option value="Middle">Middle</ion-select-option>
+        <ion-select-option value="High">High</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item id="open-popover">
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-label> Due Date </ion-label>
+    </ion-item>
+    <ion-popover [keepContentsMounted]="true" trigger="open-popover">
+      <ng-template>
+        <ion-datetime displayFormat="D MMM YYYY H:mm">
+        </ion-datetime>
+      </ng-template>
+    </ion-popover>
+
+    <ion-item>
+      <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+      <ion-label>Category</ion-label>
+    </ion-item>
+
+    <ion-button class="ion-margin" expand="block">Add Task</ion-button>
+  </ion-card>
+</ion-content>
