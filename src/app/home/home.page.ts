@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  searchTerm: string;
   list = [];
 
   hour: any = '0' + 0;
@@ -47,8 +48,9 @@ export class HomePage {
     this.list.splice(index, 1);
   }
 
-  start(i) {
-    this.running = true;
+  start(it) {
+    if(!this.running) {
+      this.running = true;
     this.startTimer = setInterval(() => {
       if (this.hour === '06') {
         this.stopProgressDay();
@@ -74,9 +76,10 @@ export class HomePage {
         this.min = '0' + 0;
       }
     }, 10);
+    }
 
     this.list.forEach((item, index) => {
-      if (index !== i) {
+      if (item !== it) {
         item.itemExecuting = false;
         clearInterval(item.itemProgress);
       } else {
@@ -84,8 +87,7 @@ export class HomePage {
 
         item.itemProgress = setInterval(() => {
           item.ms++;
-          item.ms =
-            item.ms < 10 ? '0' + item.ms : item.ms;
+          item.ms = item.ms < 10 ? '0' + item.ms : item.ms;
 
           if (item.ms === 100) {
             item.s++;
@@ -114,8 +116,8 @@ export class HomePage {
     this.running = false;
   }
 
-  stop(i) {
-    this.list[i].itemExecuting = false;
-    clearInterval(this.list[i].itemProgress);
+  stop(it) {
+    it.itemExecuting = false;
+    clearInterval(it.itemProgress);
   }
 }

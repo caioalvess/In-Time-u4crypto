@@ -34,14 +34,15 @@ export class AddNewTaskPage implements OnInit {
   addTask() {
     this.taskObject = ({
       itemName: this.taskName,
-      itemDate: new Date().toLocaleString('en-US'),
+      itemDate: new Date().toLocaleString(),
       itemPriority: this.taskPriority,
       itemCategory: this.taskCategory,
       h: '0' + 0,
       m: '0' + 0,
       s: '0' + 0,
       ms: '0' + 0,
-      itemExecuting: false
+      itemExecuting: false,
+      itemId: Math.floor(Math.random() * 100000)
     });
     this.dismis();
   }
