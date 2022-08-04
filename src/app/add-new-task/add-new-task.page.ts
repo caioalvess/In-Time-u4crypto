@@ -7,21 +7,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-new-task.page.scss'],
 })
 export class AddNewTaskPage implements OnInit {
+  categories = ['Work', 'Personal', 'Home'];
+  today = new Date().toLocaleString();
 
-  categories = [];
+  taskName;
+  taskPriority;
+  taskCategory;
+  taskDate;
+  taskProgress;
+  taskExecuting;
 
-  // taskName
-  // taskDate
-  // taskPriority
-  // taskCategory
+  taskObject;
 
   constructor(public modalCtrl: ModalController) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async dismis() {
-    await this.modalCtrl.dismiss();
-  };
+    await this.modalCtrl.dismiss(this.taskObject);
+  }
 
+  selectedCategory(index) {
+    this.taskCategory = this.categories[index];
+  }
+
+  addTask() {
+    this.taskObject = ({
+      itemName: this.taskName,
+      itemDate: new Date().toLocaleString('en-US'),
+      itemPriority: this.taskPriority,
+      itemCategory: this.taskCategory,
+      h: '0' + 0,
+      m: '0' + 0,
+      s: '0' + 0,
+      ms: '0' + 0,
+      itemExecuting: false
+    });
+    this.dismis();
+  }
 }
