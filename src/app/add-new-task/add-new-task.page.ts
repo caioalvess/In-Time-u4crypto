@@ -42,7 +42,8 @@ export class AddNewTaskPage implements OnInit {
       s: '0' + 0,
       ms: '0' + 0,
       itemExecuting: false,
-      itemId: Math.floor(Math.random() * 100000)
+      itemId: Math.floor(Math.random() * 100000),
+      itemComplete: false
     });
     this.dismis();
   }

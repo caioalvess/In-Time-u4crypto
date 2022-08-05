@@ -45,6 +45,7 @@
   <ion-card
     *ngFor="let item of list | filter:searchTerm;  let i = index"
     class="ion-margin"
+
   >
     <ion-card-header>
       <ion-card-subtitle
@@ -86,21 +87,25 @@
     >
 
     <ion-row>
-      <ion-item button (click)="start(item)" *ngIf="!item.itemExecuting">
+      <ion-item button (click)="start(item)" *ngIf="!item.itemExecuting && !item.itemComplete">
         <ion-icon name="play-outline"></ion-icon>
         <p>Start</p>
       </ion-item>
-      <ion-item button (click)="stop(item)" *ngIf="item.itemExecuting">
+      <ion-item button (click)="stop(item)" *ngIf="item.itemExecuting && !item.itemComplete">
         <ion-icon name="pause-outline"></ion-icon>
         <p>Stop</p>
       </ion-item>
 
-      <ion-item>
+      <ion-item *ngIf="item.itemComplete">
+        <ion-icon style="color: green;" name="checkMark-outline"></ion-icon>
+        <p style="color: green;">Complete</p>
+      </ion-item>
+      <ion-item button (click)="complete(item)" *ngIf="!item.itemComplete">
         <ion-icon name="checkMark-outline"></ion-icon>
         <p>Complete</p>
       </ion-item>
 
-      <ion-item button (click)="delete(i)">
+      <ion-item button (click)="delete(i)" *ngIf="!item.itemComplete">
         <ion-icon name="trash-outline"></ion-icon>
         <p>Cancel</p>
       </ion-item>

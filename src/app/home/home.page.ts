@@ -36,7 +36,6 @@ export class HomePage {
       ) {
         return;
       } else {
-        console.log(newTaskObj.data);
         this.list.push(newTaskObj.data);
       }
     });
@@ -44,12 +43,18 @@ export class HomePage {
     return await modal.present();
   }
 
+  complete(item) {
+    console.log(item);
+    item.itemComplete = true;
+    clearInterval(item.itemProgress);
+  };
+
   delete(index) {
     this.list.splice(index, 1);
-  }
+  };
 
   start(it) {
-    if(!this.running) {
+    if(!this.running && !it.itemComplete) {
       this.running = true;
     this.startTimer = setInterval(() => {
       if (this.hour === '06') {
