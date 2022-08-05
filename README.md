@@ -5,9 +5,6 @@ In Time é a ferramenta criada para ajudar um estagiário a gerenciar o seu temp
 Gerencie suas tarefas de forma que o seu tempo seja otimizado ao máximo dentro do limite de 6 horas por dia.
 
 1. Clique no botão de "+" para adicionar uma tarefa - Crie quantas tarefas desejar, fique à vontade!
-<p align="center">
-  <img src="/src/assets/nutri.PNG" width="100%">
-</p>
 2. Existe algumas informações que você tem que preencher para ter uma gestão melhor do seu tempo.
 3. Após ter preenchido as informaçôes, clique em "ADD TASK".
 4. Dentro de cada tarefa existem recursos para gerenciar - Comece apertando "Play" e sua jornada começará! 
