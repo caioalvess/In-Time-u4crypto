@@ -23,7 +23,7 @@
           gap: 16px;
         "
       >
-        <div style="color: #433465; font-weight: 800">06:00:00</div>
+        <span style="color: #433465; font-weight: 800">06:00:00</span>
         <span>/</span>
         <div style="color: green; font-weight: 800">
           <span>{{ hour }}</span>:<span>{{min}}</span>:<span>{{sec}}</span>
@@ -81,7 +81,7 @@
 
     <ion-card-content>
       Progress
-      <span style="font-weight: 800"
+      <span style="font-weight: 800" class="number"
         >{{ item.h }}:{{ item.m }}:{{ item.s }}:{{ item.ms }}</span
       ></ion-card-content
     >
