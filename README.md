@@ -22,3 +22,4 @@ Gerencie suas tarefas de forma que o seu tempo seja otimizado ao máximo dentro 
 - Basta o primeiro start de tarefa no dia e a sua jornada de trabalho começará.
 - Só é possível executar uma tarefa por vez.
 - Ao utilizar o recurso de "Stop", apenas o andamento da tarefa em questâo vai congelar.
+- Utilize o recurso de filtro para encontrar tarefas específicas!
